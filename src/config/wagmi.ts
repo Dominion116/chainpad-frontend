@@ -1,10 +1,12 @@
 import { createAppKit } from '@reown/appkit/react'
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
-import { base, mainnet } from 'viem/chains'
+import { base, type AppKitNetwork } from '@reown/appkit/networks'
+// import type { AppKitNetwork } from '@reown/appkit'
 
 const projectId = '8429aa0bbbea1af265e0d8bbe0d8f01e'
 
-const networks = [base, mainnet]
+// 👇 force it to be a non-empty tuple
+const networks: [AppKitNetwork, ...AppKitNetwork[]] = [base]
 
 const wagmiAdapter = new WagmiAdapter({
   networks,
@@ -20,7 +22,7 @@ export const modal = createAppKit({
   metadata: {
     name: 'ChainPad',
     description: 'Decentralized Note Taking',
-    url: window.location.origin,
+    url: typeof window !== 'undefined' ? window.location.origin : '',
     icons: []
   },
   features: {

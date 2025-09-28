@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useAccount, useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi'
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from '../constants/contract'
-import { base } from 'viem/chains'
 
 export function NotesManager() {
   const [newNote, setNewNote] = useState('')
-  const { address, isConnected, chainId } = useAccount()
+  const { isConnected } = useAccount()
   const { writeContract, data: hash, isPending } = useWriteContract()
   
   const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({
@@ -16,14 +15,12 @@ export function NotesManager() {
     address: CONTRACT_ADDRESS,
     abi: CONTRACT_ABI,
     functionName: 'getNotes',
-    chainId: base.id,
   })
 
   const { data: notesCount } = useReadContract({
     address: CONTRACT_ADDRESS,
     abi: CONTRACT_ABI,
     functionName: 'getNotesCount',
-    chainId: base.id,
   })
 
   useEffect(() => {
@@ -41,16 +38,11 @@ export function NotesManager() {
       abi: CONTRACT_ABI,
       functionName: 'saveNote',
       args: [newNote],
-      chainId: base.id,
     })
   }
 
   if (!isConnected) {
     return <div>Please connect your wallet to use ChainPad</div>
-  }
-
-  if (chainId !== base.id) {
-    return <div>Please switch to Base network to use ChainPad</div>
   }
 
   return (
