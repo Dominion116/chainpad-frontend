@@ -16,6 +16,12 @@ export default function NotesApp() {
   const { address, isConnected } = useAccount()
   const [newNote, setNewNote] = useState('')
   const [status, setStatus] = useState('')
+  const [mounted, setMounted] = useState(false)
+
+  // Prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Read contract data
   const { data: notes = [], refetch: refetchNotes } = useReadContract({
@@ -75,6 +81,26 @@ export default function NotesApp() {
 
   const charactersLeft = 1000 - newNote.length
   const isOverLimit = newNote.length > 1000
+
+  // Show loading state while mounting
+  if (!mounted) {
+    return (
+      <div className="min-h-screen bg-gray-950 text-gray-100">
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex justify-between items-center mb-8">
+            <h1 className="text-3xl font-bold">Notes DApp</h1>
+            <Button disabled>Loading...</Button>
+          </div>
+          <Card className="max-w-md mx-auto text-center">
+            <CardContent className="pt-6">
+              <div className="w-12 h-12 mx-auto mb-4 animate-pulse bg-gray-700 rounded" />
+              <p className="text-gray-400">Loading application...</p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    )
+  }
 
   if (!isConnected) {
     return (

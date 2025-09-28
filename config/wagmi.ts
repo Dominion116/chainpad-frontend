@@ -1,16 +1,18 @@
 import { defaultWagmiConfig } from '@web3modal/wagmi/react/config'
-import { mainnet, sepolia } from 'wagmi/chains'
+import { base } from 'wagmi/chains'
 
-const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID!
+// Get projectId from environment
+const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || 'demo-project-id'
 
 const metadata = {
   name: 'Notes DApp',
   description: 'Decentralized Notes Application',
-  url: 'https://notes-dapp.vercel.app',
-  icons: ['https://avatars.githubusercontent.com/u/37784886']
+  url: typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000',
+  icons: ['https://walletconnect.com/walletconnect-logo.png']
 }
 
-const chains = [mainnet, sepolia] as const
+// Configure chains with proper RPC endpoints
+const chains = [base] as const
 
 export const config = defaultWagmiConfig({
   chains,
@@ -19,5 +21,6 @@ export const config = defaultWagmiConfig({
   enableWalletConnect: true,
   enableInjected: true,
   enableEIP6963: true,
-  enableCoinbase: true,
+  enableCoinbase: false, // Disable to reduce errors
+  ssr: false, // Disable SSR for Web3Modal
 })

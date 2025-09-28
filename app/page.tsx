@@ -1,5 +1,5 @@
-import NotesApp from '../components/NotesApp'
+import ClientWrapper from '../components/ClientWrapper'
 
 export default function Home() {
-  return <NotesApp />
+  return <ClientWrapper />
 }
