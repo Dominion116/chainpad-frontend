@@ -4,10 +4,26 @@ import { useWeb3Modal } from '@web3modal/wagmi/react'
 import { useAccount } from 'wagmi'
 import { Button } from './ui/button'
 import { Wallet } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export default function ConnectButton() {
   const { open } = useWeb3Modal()
   const { address, isConnected } = useAccount()
+  const [mounted, setMounted] = useState(false)
+
+  // Prevent hydration mismatch by only rendering after mount
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <Button disabled className="flex items-center gap-2">
+        <Wallet className="w-4 h-4" />
+        Loading...
+      </Button>
+    )
+  }
 
   if (isConnected) {
     return (
