@@ -5,6 +5,8 @@ import { Wallet, FileText, Plus, AlertCircle, CheckCircle } from 'lucide-react';
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from '@/lib/contract';
 import { ethers } from 'ethers';
 
+
+
 const ChainPad = () => {
   const [account, setAccount] = useState('');
   const [notes, setNotes] = useState<string[]>([]);
@@ -13,6 +15,7 @@ const ChainPad = () => {
   const [status, setStatus] = useState('');
   const [connected, setConnected] = useState(false);
 
+  
   const connectWallet = async () => {
     try {
       if (!window.ethereum) {
