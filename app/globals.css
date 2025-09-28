@@ -3,10 +3,262 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-gray-800;
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+    --radius: 0.75rem;
   }
+  
+  * {
+    @apply border-border;
+  }
+  
   body {
-    @apply bg-gray-950 text-gray-100;
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: 
+      radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 0.05) 0px, transparent 50%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 6px;
+  border: 2px solid hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Custom animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Utility classes */
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
+
+/* Glass morphism effect */
+.glass-effect {
+  backdrop-filter: blur(16px) saturate(180%);
+  background-color: hsla(var(--card) / 0.8);
+  border: 1px solid hsla(var(--border) / 0.5);
+}
+
+/* Gradient text effects */
+.text-gradient-primary {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(217.2 91.2% 70%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-secondary {
+  background: linear-gradient(135deg, hsl(125 98% 72%), hsl(354 98% 61%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced button styles */
+.btn-gradient {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(256 96% 67%));
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, hsl(217.2 91.2% 65%), hsl(256 96% 72%));
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px hsla(var(--primary) / 0.3);
+}
+
+/* Card enhancements */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 20px 25px -5px hsla(var(--primary) / 0.1),
+    0 10px 10px -5px hsla(var(--primary) / 0.05);
+  border-color: hsla(var(--primary) / 0.3);
+}
+
+/* Loading shimmer effect */
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    hsla(var(--muted) / 0.3) 25%,
+    hsla(var(--muted-foreground) / 0.1) 50%,
+    hsla(var(--muted) / 0.3) 75%
+  );
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Status indicators */
+.status-dot {
+  position: relative;
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Floating elements */
+.floating-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.floating-orb-1 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, hsla(var(--primary) / 0.1) 0%, transparent 70%);
+  top: 10%;
+  left: -5%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.floating-orb-2 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, hsla(125 98% 72% / 0.08) 0%, transparent 70%);
+  top: 60%;
+  right: -3%;
+  animation: float 12s ease-in-out infinite reverse;
+}
+
+.floating-orb-3 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, hsla(256 96% 67% / 0.06) 0%, transparent 70%);
+  bottom: 20%;
+  left: 20%;
+  animation: float 10s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+/* Input enhancements */
+.input-glow:focus {
+  box-shadow: 0 0 0 2px hsla(var(--primary) / 0.2);
+}
+
+/* Typography improvements */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .floating-orb {
+    display: none;
   }
 }
