@@ -17,44 +17,44 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: "hsl(217.2 32.6% 17.5%)",
+        input: "hsl(217.2 32.6% 17.5%)",
+        ring: "hsl(212.7 26.8% 83.9%)",
+        background: "hsl(222.2 84% 4.9%)",
+        foreground: "hsl(210 40% 98%)",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "hsl(210 40% 98%)",
+          foreground: "hsl(222.2 84% 4.9%)",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "hsl(217.2 32.6% 17.5%)",
+          foreground: "hsl(210 40% 98%)",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "hsl(0 62.8% 30.6%)",
+          foreground: "hsl(210 40% 98%)",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "hsl(217.2 32.6% 17.5%)",
+          foreground: "hsl(215 20.2% 65.1%)",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "hsl(217.2 32.6% 17.5%)",
+          foreground: "hsl(210 40% 98%)",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "hsl(222.2 84% 4.9%)",
+          foreground: "hsl(210 40% 98%)",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "hsl(222.2 84% 4.9%)",
+          foreground: "hsl(210 40% 98%)",
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "0.5rem",
+        md: "calc(0.5rem - 2px)",
+        sm: "calc(0.5rem - 4px)",
       },
       keyframes: {
         "accordion-down": {
