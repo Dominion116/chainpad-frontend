@@ -13,7 +13,7 @@ export default function ConnectButton() {
     return (
       <div className="flex items-center gap-2">
         <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-        <span className="text-sm text-muted-foreground">
+        <span className="text-sm text-gray-400">
           {address?.slice(0, 6)}...{address?.slice(-4)}
         </span>
       </div>

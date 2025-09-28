@@ -10,15 +10,15 @@ interface NoteCardProps {
 
 export default function NoteCard({ note, index }: NoteCardProps) {
   return (
-    <Card className="transition-all hover:border-muted-foreground/50">
+    <Card className="transition-all hover:border-gray-600">
       <CardHeader>
         <div className="flex justify-between items-start">
-          <CardTitle className="text-sm text-muted-foreground">Note #{index + 1}</CardTitle>
+          <CardTitle className="text-sm text-gray-400">Note #{index + 1}</CardTitle>
           <Badge variant="secondary">{note.length} chars</Badge>
         </div>
       </CardHeader>
       <CardContent>
-        <p className="text-foreground whitespace-pre-wrap break-words">{note}</p>
+        <p className="text-gray-200 whitespace-pre-wrap break-words">{note}</p>
       </CardContent>
     </Card>
   )

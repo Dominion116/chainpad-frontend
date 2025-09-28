@@ -78,7 +78,7 @@ export default function NotesApp() {
 
   if (!isConnected) {
     return (
-      <div className="min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-gray-950 text-gray-100">
         <div className="container mx-auto px-4 py-8">
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-3xl font-bold">Notes DApp</h1>
@@ -87,9 +87,9 @@ export default function NotesApp() {
           
           <Card className="max-w-md mx-auto text-center">
             <CardContent className="pt-6">
-              <Wallet className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
+              <Wallet className="w-12 h-12 mx-auto mb-4 text-gray-400" />
               <h2 className="text-xl font-semibold mb-2">Connect Your Wallet</h2>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-gray-400 mb-6">
                 Connect your wallet to start saving and viewing your notes on the blockchain.
               </p>
               <ConnectButton />
@@ -101,7 +101,7 @@ export default function NotesApp() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-gray-950 text-gray-100">
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold">Notes DApp</h1>
@@ -130,10 +130,10 @@ export default function NotesApp() {
                 <div className="flex justify-between items-center mt-2">
                   <span className={`text-sm ${
                     isOverLimit 
-                      ? 'text-destructive' 
+                      ? 'text-red-400' 
                       : charactersLeft < 100 
-                        ? 'text-yellow-500' 
-                        : 'text-muted-foreground'
+                        ? 'text-yellow-400' 
+                        : 'text-gray-400'
                   }`}>
                     {charactersLeft} characters remaining
                   </span>
@@ -145,14 +145,14 @@ export default function NotesApp() {
                   {isPending || isConfirming ? (
                     <Loader2 className="w-4 h-4 animate-spin" />
                   ) : isConfirmed ? (
-                    <CheckCircle className="w-4 h-4 text-green-500" />
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                   ) : error ? (
-                    <XCircle className="w-4 h-4 text-destructive" />
+                    <XCircle className="w-4 h-4 text-red-400" />
                   ) : null}
                   <span className={
-                    isConfirmed ? 'text-green-500' : 
-                    error ? 'text-destructive' : 
-                    'text-blue-500'
+                    isConfirmed ? 'text-green-400' : 
+                    error ? 'text-red-400' : 
+                    'text-blue-400'
                   }>
                     {status}
                   </span>
@@ -193,7 +193,7 @@ export default function NotesApp() {
           </CardHeader>
           <CardContent>
             {notes.length === 0 ? (
-              <div className="text-center py-8 text-muted-foreground">
+              <div className="text-center py-8 text-gray-400">
                 <FileText className="w-12 h-12 mx-auto mb-4 opacity-50" />
                 <p>No notes saved yet.</p>
                 <p className="text-sm">Write your first note above!</p>
