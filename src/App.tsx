@@ -8,6 +8,8 @@ import './App.css'
 const queryClient = new QueryClient()
 
 function App() {
+  console.log('App rendering...')
+  
   return (
     <WagmiProvider config={wagmiAdapter.wagmiConfig}>
       <QueryClientProvider client={queryClient}>
