@@ -1,5 +1,6 @@
 import { useAccount, useDisconnect } from 'wagmi'
 import { modal } from '../config/wagmi'
+import { Button } from "@/components/ui/button";
 
 export function WalletConnect() {
   const { address, isConnected } = useAccount()
@@ -11,16 +12,14 @@ export function WalletConnect() {
 
   if (isConnected && address) {
     return (
-      <div className="wallet-info">
-        <p>Connected: {address.slice(0, 6)}...{address.slice(-4)}</p>
-        <button onClick={() => disconnect()}>Disconnect</button>
+      <div className="flex items-center gap-4">
+        <p className="text-sm text-muted-foreground">Connected: {address.slice(0, 6)}...{address.slice(-4)}</p>
+        <Button variant="outline" onClick={() => disconnect()}>Disconnect</Button>
       </div>
     )
   }
 
   return (
-    <div className="wallet-connect">
-      <button onClick={handleConnect}>Connect Wallet</button>
-    </div>
+    <Button onClick={handleConnect}>Connect Wallet</Button>
   )
 }

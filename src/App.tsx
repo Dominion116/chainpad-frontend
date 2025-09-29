@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { WalletConnect } from './components/WalletConnect'
 import { NotesManager } from './components/NotesManager'
 import { wagmiAdapter } from './config/wagmi'
-import './App.css'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const queryClient = new QueryClient()
 
@@ -13,13 +13,20 @@ function App() {
   return (
     <WagmiProvider config={wagmiAdapter.wagmiConfig}>
       <QueryClientProvider client={queryClient}>
-        <div className="app">
-          <header>
-            <h1>ChainPad</h1>
+        <div className="container mx-auto p-4">
+          <header className="flex justify-between items-center py-4">
+            <h1 className="text-2xl font-bold">ChainPad</h1>
             <WalletConnect />
           </header>
           <main>
-            <NotesManager />
+            <Card>
+              <CardHeader>
+                <CardTitle>Notes</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <NotesManager />
+              </CardContent>
+            </Card>
           </main>
         </div>
       </QueryClientProvider>
