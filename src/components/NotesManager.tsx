@@ -48,7 +48,7 @@ export function NotesManager() {
     return (
         <Card>
             <CardHeader>
-                <CardTitle>Connect Wallet</CardTitle>
+                <CardTitle>Connect Your Wallet</CardTitle>
             </CardHeader>
             <CardContent>
                 <p>Please connect your wallet to use ChainPad.</p>
