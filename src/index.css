@@ -66,3 +66,16 @@ html {
   animation: float 6s ease-in-out infinite;
   animation-delay: 3s;
 }
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}

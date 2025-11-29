@@ -1,13 +1,14 @@
+import { useAppKit } from '@reown/appkit/react'
 import { useAccount, useDisconnect } from 'wagmi'
-import { modal } from '../config/wagmi'
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 
 export function WalletConnect() {
   const { address, isConnected } = useAccount()
   const { disconnect } = useDisconnect()
+  const { open } = useAppKit()
 
   const handleConnect = () => {
-    modal.open()
+    open()
   }
 
   if (isConnected && address) {
