@@ -46,35 +46,37 @@ export function NotesManager() {
 
   if (!isConnected) {
     return (
-        <Card>
+        <Card className="bg-gradient-to-b from-gray-900/80 to-gray-900/40 border-gray-800">
             <CardHeader>
-                <CardTitle>Connect Wallet</CardTitle>
+                <CardTitle className="text-white">Connect Your Wallet</CardTitle>
             </CardHeader>
             <CardContent>
-                <p>Please connect your wallet to use ChainPad.</p>
+                <p className="text-gray-400">Please connect your wallet to use ChainPad.</p>
             </CardContent>
         </Card>
     )
   }
 
   return (
-    <div className="space-y-4">
-        <Card>
+    <div className="space-y-6">
+        <Card className="bg-gradient-to-b from-gray-900/80 to-gray-900/40 border-gray-800 hover:border-orange-500/30 transition-all">
             <CardHeader>
-                <CardTitle>Add a New Note</CardTitle>
-                <CardDescription>Write your note below and save it to the blockchain.</CardDescription>
+                <CardTitle className="text-white">Add a New Note</CardTitle>
+                <CardDescription className="text-gray-400">Write your note below and save it to the blockchain.</CardDescription>
             </CardHeader>
             <CardContent>
-                <div className="grid w-full gap-2">
+                <div className="grid w-full gap-4">
                     <Textarea
                         value={newNote}
                         onChange={(e) => setNewNote(e.target.value)}
                         placeholder="Write your note here..."
                         rows={4}
+                        className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-500 focus:border-orange-500"
                     />
                     <Button
                         onClick={handleSaveNote}
                         disabled={isPending || isConfirming || !newNote.trim()}
+                        className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white shadow-lg shadow-orange-500/20"
                     >
                         {isPending || isConfirming ? 'Saving...' : 'Save Note'}
                     </Button>
@@ -83,25 +85,25 @@ export function NotesManager() {
         </Card>
 
 
-      <Card>
+      <Card className="bg-gradient-to-b from-gray-900/80 to-gray-900/40 border-gray-800">
         <CardHeader>
-          <CardTitle>Your Notes</CardTitle>
-          <CardDescription>You have {notesCount?.toString() || '0'} notes.</CardDescription>
+          <CardTitle className="text-white">Your Notes</CardTitle>
+          <CardDescription className="text-gray-400">You have {notesCount?.toString() || '0'} notes.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           {notes && (notes as string[]).length > 0 ? (
             (notes as string[]).map((note, index) => (
-              <Card key={index} className="bg-muted/40">
+              <Card key={index} className="bg-gray-800/40 border-gray-700 hover:border-orange-500/30 transition-all">
                 <CardContent className="p-4">
-                  <p>{note}</p>
+                  <p className="text-gray-200">{note}</p>
                 </CardContent>
-                <CardFooter className="text-sm text-muted-foreground p-2 px-4">
+                <CardFooter className="text-sm text-gray-500 p-2 px-4">
                     Note #{index + 1}
                 </CardFooter>
               </Card>
             ))
           ) : (
-            <p>No notes saved yet.</p>
+            <p className="text-gray-400 text-center py-8">No notes saved yet.</p>
           )}
         </CardContent>
       </Card>
