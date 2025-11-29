@@ -41,18 +41,18 @@ export function Hero() {
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-8">
           <span className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
-          <span className="text-orange-400 text-sm font-medium">Blockchain Solutions</span>
+          <span className="text-orange-400 text-sm font-medium">Decentralized Note-Taking</span>
         </div>
 
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-          Transform Your Data Into<br />
+          Your Notes. Your Keys.<br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
-            Actionable Solutions
+            Your Blockchain.
           </span>
         </h1>
 
         <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-          Unlock the full potential of your data with our suite of analytics tools
+          Store your notes permanently on the blockchain. Censorship-resistant, immutable, and owned by you forever.
         </p>
 
         <div className="flex items-center justify-center gap-4">
@@ -64,21 +64,22 @@ export function Hero() {
           </Button>
           <Button
             variant="outline"
+            onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
             className="border-gray-600 text-white hover:bg-white/5 px-8 py-6 text-lg rounded-lg"
           >
-            Talk to Sales
+            Learn More
           </Button>
         </div>
 
         {/* Partner Logos Section */}
         <div className="mt-24">
-          <p className="text-gray-500 text-sm mb-8">Partnering with top industry experts</p>
+          <p className="text-gray-500 text-sm mb-8">Built on trusted blockchain infrastructure</p>
           <div className="flex items-center justify-center gap-12 flex-wrap opacity-40 grayscale hover:opacity-60 transition-opacity">
-            <div className="text-gray-400 text-2xl font-semibold">Coinbase</div>
-            <div className="text-gray-400 text-2xl font-semibold">Spotify</div>
-            <div className="text-gray-400 text-2xl font-semibold">Slack</div>
-            <div className="text-gray-400 text-2xl font-semibold">Dropbox</div>
-            <div className="text-gray-400 text-2xl font-semibold">Webflow</div>
+            <div className="text-gray-400 text-2xl font-semibold">Base</div>
+            <div className="text-gray-400 text-2xl font-semibold">Ethereum</div>
+            <div className="text-gray-400 text-2xl font-semibold">IPFS</div>
+            <div className="text-gray-400 text-2xl font-semibold">Web3</div>
+            <div className="text-gray-400 text-2xl font-semibold">Metamask</div>
           </div>
         </div>
       </div>

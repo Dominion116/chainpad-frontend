@@ -5,30 +5,29 @@ export function Features() {
     {
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
         </svg>
       ),
-      title: "Customer Insights",
-      description: "Analyze customer interactions across touchpoints with the platform"
+      title: "Truly Decentralized",
+      description: "Your notes are stored on-chain. No central servers, no data breaches, complete ownership."
     },
     {
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
-      title: "Product Metrics",
-      description: "Track your product's performance in real-time"
+      title: "Immutable & Permanent",
+      description: "Once saved, your notes are permanent and tamper-proof on the blockchain forever."
     },
     {
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
         </svg>
       ),
-      title: "Campaign Optimization",
-      description: "Measure campaign success with key metrics like conversion"
+      title: "Wallet-Controlled Access",
+      description: "Only you can access your notes. Your wallet, your keys, your data."
     }
   ]
 
@@ -43,13 +42,13 @@ export function Features() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6">
-            <span className="text-orange-400 text-sm font-medium">Take Full Control of Your Tools</span>
+            <span className="text-orange-400 text-sm font-medium">Why Choose ChainPad</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Application</span>
+            Blockchain-Powered <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Note Taking</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Our users love how Notion CRM simplifies their processes and streamlines operations
+            Experience the future of note-taking with true ownership and permanent storage
           </p>
         </div>
 
@@ -74,40 +73,51 @@ export function Features() {
           ))}
         </div>
 
-        {/* Improved Decision Making Section */}
         <div className="mt-24 grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6">
-              <span className="text-orange-400 text-sm font-medium">Data Insights</span>
+              <span className="text-orange-400 text-sm font-medium">How It Works</span>
             </div>
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Improved <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">decision-making</span>
+              Simple, <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Secure & Fast</span>
             </h3>
             <p className="text-gray-400 mb-8 leading-relaxed">
-              By leveraging real-time insights and comprehensive data analysis, you can make informed decisions with confidence, reducing uncertainty.
+              ChainPad leverages blockchain technology to give you complete control over your notes. Every note is a transaction, permanently recorded and accessible only by you.
             </p>
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center mt-1 flex-shrink-0">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span className="text-orange-500 font-bold text-sm">1</span>
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold mb-2">Comprehensive Data Visualization</h4>
+                  <h4 className="text-white font-semibold mb-2">Connect Your Wallet</h4>
                   <p className="text-gray-400 text-sm">
-                    With advanced visualization tools, complex datasets are easy to understand
+                    Use any Web3 wallet like MetaMask, WalletConnect, or Coinbase Wallet
                   </p>
                 </div>
               </div>
               
               <div className="flex items-start gap-4">
                 <div className="w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center mt-1 flex-shrink-0">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span className="text-orange-500 font-bold text-sm">2</span>
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold mb-2">Predictive Modeling</h4>
+                  <h4 className="text-white font-semibold mb-2">Write & Save</h4>
                   <p className="text-gray-400 text-sm">
-                    Leverage cutting-edge predictive analytics to forecast future trends and outcomes
+                    Create your notes and save them directly to the Base blockchain
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center mt-1 flex-shrink-0">
+                  <span className="text-orange-500 font-bold text-sm">3</span>
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold mb-2">Access Anywhere</h4>
+                  <p className="text-gray-400 text-sm">
+                    Your notes are available forever, accessible from any device with your wallet
                   </p>
                 </div>
               </div>
@@ -117,11 +127,11 @@ export function Features() {
           <div className="relative">
             <div className="bg-gradient-to-br from-gray-900 to-gray-900/50 border border-gray-800 rounded-2xl p-8 shadow-2xl">
               <div className="mb-6">
-                <div className="text-gray-400 text-sm mb-2">Increased decision-making</div>
+                <div className="text-gray-400 text-sm mb-2">Total Notes Stored</div>
                 <div className="flex items-end gap-2">
-                  <div className="text-5xl font-bold text-white">85%</div>
+                  <div className="text-5xl font-bold text-white">1000+</div>
                   <div className="text-green-500 text-sm mb-2 flex items-center gap-1">
-                    +9%
+                    Growing
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                     </svg>
@@ -131,16 +141,16 @@ export function Features() {
               
               <div className="grid grid-cols-3 gap-4 mb-6">
                 <div className="bg-gray-800/50 rounded-lg p-4">
-                  <div className="text-gray-400 text-xs mb-1">Speed</div>
-                  <div className="text-white font-semibold text-lg">Fast</div>
+                  <div className="text-gray-400 text-xs mb-1">Network</div>
+                  <div className="text-white font-semibold text-lg">Base</div>
                 </div>
                 <div className="bg-gray-800/50 rounded-lg p-4">
-                  <div className="text-gray-400 text-xs mb-1">Revenue</div>
-                  <div className="text-white font-semibold text-lg">$289k</div>
+                  <div className="text-gray-400 text-xs mb-1">Gas</div>
+                  <div className="text-white font-semibold text-lg">Low</div>
                 </div>
                 <div className="bg-gray-800/50 rounded-lg p-4">
-                  <div className="text-gray-400 text-xs mb-1">Insight</div>
-                  <div className="text-white font-semibold text-lg">High</div>
+                  <div className="text-gray-400 text-xs mb-1">Status</div>
+                  <div className="text-green-500 font-semibold text-lg">Live</div>
                 </div>
               </div>
 
