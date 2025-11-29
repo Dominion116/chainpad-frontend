@@ -1,9 +1,18 @@
+import { useNavigate } from 'react-router-dom'
+import { useAccount } from 'wagmi'
+import { modal } from '../config/wagmi'
 import { Button } from "@/components/ui/button"
 
 export function Hero() {
-  const scrollToNotes = () => {
-    const notesSection = document.getElementById('notes-section')
-    notesSection?.scrollIntoView({ behavior: 'smooth' })
+  const navigate = useNavigate()
+  const { isConnected } = useAccount()
+
+  const handleGetStarted = () => {
+    if (isConnected) {
+      navigate('/notes')
+    } else {
+      modal.open()
+    }
   }
 
   return (
@@ -48,10 +57,10 @@ export function Hero() {
 
         <div className="flex items-center justify-center gap-4">
           <Button
-            onClick={scrollToNotes}
+            onClick={handleGetStarted}
             className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-8 py-6 text-lg rounded-lg shadow-lg shadow-orange-500/20"
           >
-            Get Started
+            {isConnected ? 'Go to Notes' : 'Connect Wallet'}
           </Button>
           <Button
             variant="outline"
