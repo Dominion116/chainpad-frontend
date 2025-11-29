@@ -1,17 +1,18 @@
 import { useNavigate } from 'react-router-dom'
 import { useAccount } from 'wagmi'
-import { modal } from '../config/wagmi'
+import { useAppKit } from '@reown/appkit/react'
 import { Button } from "@/components/ui/button"
 
 export function Hero() {
   const navigate = useNavigate()
   const { isConnected } = useAccount()
+  const { open } = useAppKit()
 
   const handleGetStarted = () => {
     if (isConnected) {
       navigate('/notes')
     } else {
-      modal.open()
+      open()
     }
   }
 
