@@ -18,13 +18,6 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Geometric Background */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-orange-500/20 rotate-45 rounded-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 border border-red-500/20 -rotate-12 rounded-3xl"></div>
-        <div className="absolute top-1/2 right-1/3 w-48 h-48 border border-orange-400/20 rotate-12 rounded-2xl"></div>
-      </div>
-
       {/* Animated Gradient Orb */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-orange-500/20 via-red-500/20 to-orange-600/20 blur-3xl rounded-full animate-pulse-slow"></div>
 
@@ -75,12 +68,35 @@ export function Hero() {
         {/* Partner Logos Section */}
         <div className="mt-24">
           <p className="text-gray-500 text-sm mb-8">Built on trusted blockchain infrastructure</p>
-          <div className="flex items-center justify-center gap-12 flex-wrap opacity-40 grayscale hover:opacity-60 transition-opacity">
-            <div className="text-gray-400 text-2xl font-semibold">Base</div>
-            <div className="text-gray-400 text-2xl font-semibold">Ethereum</div>
-            <div className="text-gray-400 text-2xl font-semibold">IPFS</div>
-            <div className="text-gray-400 text-2xl font-semibold">Web3</div>
-            <div className="text-gray-400 text-2xl font-semibold">Metamask</div>
+          <div className="relative overflow-hidden">
+            {/* Gradient overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black to-transparent z-10"></div>
+            
+            {/* Scrolling container */}
+            <div className="flex animate-scroll">
+              {/* First set of logos */}
+              <div className="flex items-center gap-16 px-8 shrink-0">
+                <img src="https://avatars.githubusercontent.com/u/108554348?s=200&v=4" alt="Base" className="h-10 w-auto grayscale opacity-40 hover:opacity-60 transition-opacity" />
+                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=035" alt="Ethereum" className="h-10 w-auto grayscale opacity-40 hover:opacity-60 transition-opacity" />
+                <img src="https://docs.ipfs.tech/images/ipfs-logo.svg" alt="IPFS" className="h-10 w-auto grayscale opacity-40 hover:opacity-60 transition-opacity" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="Metamask" className="h-10 w-auto grayscale opacity-40 hover:opacity-60 transition-opacity" />
+              </div>
+              {/* Duplicate set for seamless loop */}
+              <div className="flex items-center gap-16 px-8 shrink-0">
+                <img src="https://avatars.githubusercontent.com/u/108554348?s=200&v=4" alt="Base" className="h-10 w-auto grayscale opacity-40 hover:opacity-60 transition-opacity" />
+                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=035" alt="Ethereum" className="h-10 w-auto grayscale opacity-40 hover:opacity-60 transition-opacity" />
+                <img src="https://docs.ipfs.tech/images/ipfs-logo.svg" alt="IPFS" className="h-10 w-auto grayscale opacity-40 hover:opacity-60 transition-opacity" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="Metamask" className="h-10 w-auto grayscale opacity-40 hover:opacity-60 transition-opacity" />
+              </div>
+              {/* Third set for extra smoothness */}
+              <div className="flex items-center gap-16 px-8 shrink-0">
+                <img src="https://avatars.githubusercontent.com/u/108554348?s=200&v=4" alt="Base" className="h-10 w-auto grayscale opacity-40 hover:opacity-60 transition-opacity" />
+                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=035" alt="Ethereum" className="h-10 w-auto grayscale opacity-40 hover:opacity-60 transition-opacity" />
+                <img src="https://docs.ipfs.tech/images/ipfs-logo.svg" alt="IPFS" className="h-10 w-auto grayscale opacity-40 hover:opacity-60 transition-opacity" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="Metamask" className="h-10 w-auto grayscale opacity-40 hover:opacity-60 transition-opacity" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
