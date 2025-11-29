@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useAccount, useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi'
+import { useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi'
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from '../constants/contract'
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"

@@ -29,10 +29,10 @@ export function Header() {
               onClick={() => navigate('/notes')}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Notes
+              My Notes
             </button>
-            <a href="#contact" className="text-gray-300 hover:text-white transition-colors">
-              Contact
+            <a href="https://github.com/Dominion116/chainpad-frontend" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+              GitHub
             </a>
           </nav>
 
