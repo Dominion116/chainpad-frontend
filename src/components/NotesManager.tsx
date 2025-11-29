@@ -7,7 +7,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 export function NotesManager() {
   const [newNote, setNewNote] = useState('')
-  const { isConnected } = useAccount()
   const { writeContract, data: hash, isPending } = useWriteContract()
 
   const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({
@@ -42,19 +41,6 @@ export function NotesManager() {
       functionName: 'saveNote',
       args: [newNote],
     })
-  }
-
-  if (!isConnected) {
-    return (
-        <Card className="bg-gradient-to-b from-gray-900/80 to-gray-900/40 border-gray-800">
-            <CardHeader>
-                <CardTitle className="text-white">Connect Your Wallet</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <p className="text-gray-400">Please connect your wallet to use ChainPad.</p>
-            </CardContent>
-        </Card>
-    )
   }
 
   return (
